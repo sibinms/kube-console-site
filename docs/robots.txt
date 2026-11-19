@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sibinms.github.io/kube-console-site/sitemap.xml
