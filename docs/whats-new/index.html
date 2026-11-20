@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>What's new in Kube Console · Release notes</title>
-  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.3.0, Clean up stopped pods, safely." />
+  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.4.0, Secrets, viewed and edited safely." />
   <link rel="canonical" href="https://sibinms.github.io/kube-console-site/whats-new/" />
   <meta name="theme-color" content="#3b6ff5" />
   <link rel="icon" type="image/png" href="../icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kube Console" />
-  <meta property="og:title" content="What's new in Kube Console 0.3.0" />
-  <meta property="og:description" content="Clean up stopped pods, safely. Finished, failed and evicted pods no longer pile up in your namespaces. Clear them out in two clicks, with the same guard rails as shells." />
+  <meta property="og:title" content="What's new in Kube Console 0.4.0" />
+  <meta property="og:description" content="Secrets, viewed and edited safely. See the secrets in a namespace, change a value as plain text, and restart the apps that use it, all without hand-encoding Base64 or writing YAML." />
   <meta property="og:url" content="https://sibinms.github.io/kube-console-site/whats-new/" />
-  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/whats-new/0.3.0/cleanup-light.png" />
+  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/whats-new/0.4.0/secrets-light.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- Built by scripts/whats-new.js in the app repository; edit release-notes/, not this file. -->
   <style>
@@ -151,7 +151,7 @@
       <div class="wrap">
         <div class="kicker">Release notes</div>
         <h1>What's new in <span class="grad">Kube Console</span></h1>
-        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.3.0">0.3.0</a>, out 20 November 2026.</p>
+        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.4.0">0.4.0</a>, out 20 November 2026.</p>
         <div class="auto"><b>Automatic</b> Kube Console updates itself, so new versions reach you without a download.</div>
       </div>
     </header>
@@ -160,18 +160,66 @@
       <aside class="toc" aria-label="Versions">
         <h4>Versions</h4>
         <ol>
-          <li><a href="#v0.3.0" class="on">0.3.0<small>20 November 2026</small></a></li>
+          <li><a href="#v0.4.0" class="on">0.4.0<small>20 November 2026</small></a></li>
+          <li><a href="#v0.3.0">0.3.0<small>20 November 2026</small></a></li>
           <li><a href="#v0.2.0">0.2.0<small>20 November 2026</small></a></li>
           <li><a href="#v0.1.1">0.1.1<small>20 November 2026</small></a></li>
           <li><a href="#v0.1.0">0.1.0<small>20 November 2026</small></a></li>
         </ol>
       </aside>
       <div>
+      <article class="release" id="v0.4.0">
+        <header>
+          <div class="meta">
+            <span class="ver">0.4.0</span>
+            <span class="latest">Latest</span>
+            <time datetime="2026-11-20">20 November 2026</time>
+            <a class="permalink" href="#v0.4.0" title="Link to 0.4.0" aria-label="Link to version 0.4.0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
+          </div>
+          <h2>Secrets, viewed and edited safely</h2>
+          <p class="summary">See the secrets in a namespace, change a value as plain text, and restart the apps that use it, all without hand-encoding Base64 or writing YAML.</p>
+        </header>
+        <div class="hl">
+          <figure class="shot">
+            <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.4.0</span></div>
+            <picture>
+              <source srcset="0.4.0/secrets-dark.png" media="(prefers-color-scheme: dark)" />
+              <img src="0.4.0/secrets-light.png" alt="Kube Console's Secrets view listing secrets in the default namespace, with one value revealed and the others hidden" fetchpriority="high" />
+            </picture>
+          </figure>
+          <div class="hl-text">
+            <span class="tag">New</span>
+            <h3>Every secret, values hidden until you ask</h3>
+            <p>Click <strong>Secrets</strong> in the top bar to list the secrets in the open namespace with their key names. <strong>Reveal</strong> shows one value (and hides it again after a minute), and the copy button copies it without showing it. Service-account, TLS and Helm secrets are marked view only.</p>
+          </div>
+        </div>
+        <div class="hl compact">
+          <figure class="shot">
+            <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.4.0</span></div>
+            <picture>
+              <source srcset="0.4.0/secret-edit-dark.png" media="(prefers-color-scheme: dark)" />
+              <img src="0.4.0/secret-edit-light.png" alt="The Edit FEATURE_FLAGS dialog showing the current value in Base64, the new value, and a list of deployments to restart with admin and web-api ticked" loading="lazy" />
+            </picture>
+          </figure>
+          <div class="hl-text">
+            <span class="tag">New</span>
+            <h3>Edit a value, then restart what uses it</h3>
+            <p><strong>Edit</strong> shows the current value as Base64, with <strong>Reveal</strong> for plain text. Type the new value as plain text and Kube Console encodes it. Then pick what to restart: the Deployments that use the secret are ticked for you, and they get a rolling restart once the save worked. Nothing in a secret can be deleted, and a save is refused if someone changed it meanwhile.</p>
+          </div>
+        </div>
+        <div class="lists">
+          <div class="list">
+            <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg>Improvements</h4>
+            <ul><li>Create a new secret with its first key from <strong>+ New secret</strong>.</li><li>Protected clusters ask for the cluster name before a change, and read-only clusters can only view.</li><li>Values are sent to kubectl privately: never on the command line, in logs or on disk.</li><li>Secrets created by another tool (such as External Secrets) are marked, since it may put the old value back.</li></ul>
+          </div>
+        </div>
+      </article>
+
       <article class="release" id="v0.3.0">
         <header>
           <div class="meta">
             <span class="ver">0.3.0</span>
-            <span class="latest">Latest</span>
+            
             <time datetime="2026-11-20">20 November 2026</time>
             <a class="permalink" href="#v0.3.0" title="Link to 0.3.0" aria-label="Link to version 0.3.0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
           </div>
@@ -183,7 +231,7 @@
             <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.3.0</span></div>
             <picture>
               <source srcset="0.3.0/cleanup-dark.png" media="(prefers-color-scheme: dark)" />
-              <img src="0.3.0/cleanup-light.png" alt="Kube Console on a production cluster with the Delete 3 stopped pods dialog open, listing finished and failed job pods and asking for the cluster name" fetchpriority="high" />
+              <img src="0.3.0/cleanup-light.png" alt="Kube Console on a production cluster with the Delete 3 stopped pods dialog open, listing finished and failed job pods and asking for the cluster name" loading="lazy" />
             </picture>
           </figure>
           <div class="hl-text">
@@ -306,7 +354,7 @@
     <section class="cta">
       <h2>Try the latest version</h2>
       <p>Free for Macs with Apple silicon. Signed and notarized by Apple.</p>
-      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.3.0</a>
+      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.4.0</a>
     </section>
   </main>
 
