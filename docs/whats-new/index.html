@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>What's new in Kube Console · Release notes</title>
-  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.2.0, A terminal for every cluster, and updates that install themselves." />
+  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.3.0, Clean up stopped pods, safely." />
   <link rel="canonical" href="https://sibinms.github.io/kube-console-site/whats-new/" />
   <meta name="theme-color" content="#3b6ff5" />
   <link rel="icon" type="image/png" href="../icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kube Console" />
-  <meta property="og:title" content="What's new in Kube Console 0.2.0" />
-  <meta property="og:description" content="A terminal for every cluster, and updates that install themselves. Open a terminal that's already pointed at the cluster you're looking at, and never download a new version by hand again." />
+  <meta property="og:title" content="What's new in Kube Console 0.3.0" />
+  <meta property="og:description" content="Clean up stopped pods, safely. Finished, failed and evicted pods no longer pile up in your namespaces. Clear them out in two clicks, with the same guard rails as shells." />
   <meta property="og:url" content="https://sibinms.github.io/kube-console-site/whats-new/" />
-  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/whats-new/0.2.0/terminal-light.png" />
+  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/whats-new/0.3.0/cleanup-light.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- Built by scripts/whats-new.js in the app repository; edit release-notes/, not this file. -->
   <style>
@@ -151,7 +151,7 @@
       <div class="wrap">
         <div class="kicker">Release notes</div>
         <h1>What's new in <span class="grad">Kube Console</span></h1>
-        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.2.0">0.2.0</a>, out 20 November 2026.</p>
+        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.3.0">0.3.0</a>, out 20 November 2026.</p>
         <div class="auto"><b>Automatic</b> Kube Console updates itself, so new versions reach you without a download.</div>
       </div>
     </header>
@@ -160,17 +160,51 @@
       <aside class="toc" aria-label="Versions">
         <h4>Versions</h4>
         <ol>
-          <li><a href="#v0.2.0" class="on">0.2.0<small>20 November 2026</small></a></li>
+          <li><a href="#v0.3.0" class="on">0.3.0<small>20 November 2026</small></a></li>
+          <li><a href="#v0.2.0">0.2.0<small>20 November 2026</small></a></li>
           <li><a href="#v0.1.1">0.1.1<small>20 November 2026</small></a></li>
           <li><a href="#v0.1.0">0.1.0<small>20 November 2026</small></a></li>
         </ol>
       </aside>
       <div>
+      <article class="release" id="v0.3.0">
+        <header>
+          <div class="meta">
+            <span class="ver">0.3.0</span>
+            <span class="latest">Latest</span>
+            <time datetime="2026-11-20">20 November 2026</time>
+            <a class="permalink" href="#v0.3.0" title="Link to 0.3.0" aria-label="Link to version 0.3.0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
+          </div>
+          <h2>Clean up stopped pods, safely</h2>
+          <p class="summary">Finished, failed and evicted pods no longer pile up in your namespaces. Clear them out in two clicks, with the same guard rails as shells.</p>
+        </header>
+        <div class="hl">
+          <figure class="shot">
+            <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.3.0</span></div>
+            <picture>
+              <source srcset="0.3.0/cleanup-dark.png" media="(prefers-color-scheme: dark)" />
+              <img src="0.3.0/cleanup-light.png" alt="Kube Console on a production cluster with the Delete 3 stopped pods dialog open, listing finished and failed job pods and asking for the cluster name" fetchpriority="high" />
+            </picture>
+          </figure>
+          <div class="hl-text">
+            <span class="tag">New</span>
+            <h3>Clean up stopped pods</h3>
+            <p>When a namespace has pods that have finished or failed (evicted ones included), a <strong>stopped pods · Clean up…</strong> box shows how many. Pick the ones to delete, or use the trash button on a single pod. Running pods never get a delete button, and each pod is checked on the cluster again right before it's deleted.</p>
+          </div>
+        </div>
+        <div class="lists">
+          <div class="list">
+            <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg>Improvements</h4>
+            <ul><li>Deleting asks you to confirm every time. On protected and production clusters you also type the cluster's name, and read-only clusters can't delete anything.</li><li>The dialog reminds you that a pod's logs go with it, unless your cluster also keeps them elsewhere (such as Cloud Logging).</li></ul>
+          </div>
+        </div>
+      </article>
+
       <article class="release" id="v0.2.0">
         <header>
           <div class="meta">
             <span class="ver">0.2.0</span>
-            <span class="latest">Latest</span>
+            
             <time datetime="2026-11-20">20 November 2026</time>
             <a class="permalink" href="#v0.2.0" title="Link to 0.2.0" aria-label="Link to version 0.2.0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
           </div>
@@ -182,7 +216,7 @@
             <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.2.0</span></div>
             <picture>
               <source srcset="0.2.0/terminal-dark.png" media="(prefers-color-scheme: dark)" />
-              <img src="0.2.0/terminal-light.png" alt="Kube Console with a Terminal tab open on the Acme Staging cluster, showing kubectl get pods and cloud_sql_proxy running" fetchpriority="high" />
+              <img src="0.2.0/terminal-light.png" alt="Kube Console with a Terminal tab open on the Acme Staging cluster, showing kubectl get pods and cloud_sql_proxy running" loading="lazy" />
             </picture>
           </figure>
           <div class="hl-text">
@@ -272,7 +306,7 @@
     <section class="cta">
       <h2>Try the latest version</h2>
       <p>Free for Macs with Apple silicon. Signed and notarized by Apple.</p>
-      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.2.0</a>
+      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.3.0</a>
     </section>
   </main>
 
