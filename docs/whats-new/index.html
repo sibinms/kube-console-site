@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>What's new in Kube Console · Release notes</title>
-  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.5.0, Edit workload YAML, and a calmer stopped-pods page." />
+  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.6.0, Paste whole scripts into the Django shell." />
   <link rel="canonical" href="https://sibinms.github.io/kube-console-site/whats-new/" />
   <meta name="theme-color" content="#3b6ff5" />
   <link rel="icon" type="image/png" href="../icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kube Console" />
-  <meta property="og:title" content="What's new in Kube Console 0.5.0" />
-  <meta property="og:description" content="Edit workload YAML, and a calmer stopped-pods page. Change an app's Deployment straight from Kube Console, with a checked diff before anything is applied. Stopped pods now have their own page, and are deleted one at a time." />
+  <meta property="og:title" content="What's new in Kube Console 0.6.0" />
+  <meta property="og:description" content="Paste whole scripts into the Django shell. No more IndentationError when you paste code into a Django or Python shell: a multi-line paste now runs as one block, exactly as written." />
   <meta property="og:url" content="https://sibinms.github.io/kube-console-site/whats-new/" />
-  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/whats-new/0.5.0/yaml-light.png" />
+  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/whats-new/0.6.0/paste-light.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- Built by scripts/whats-new.js in the app repository; edit release-notes/, not this file. -->
   <style>
@@ -151,7 +151,7 @@
       <div class="wrap">
         <div class="kicker">Release notes</div>
         <h1>What's new in <span class="grad">Kube Console</span></h1>
-        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.5.0">0.5.0</a>, out 20 November 2026.</p>
+        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.6.0">0.6.0</a>, out 20 November 2026.</p>
         <div class="auto"><b>Automatic</b> Kube Console updates itself, so new versions reach you without a download.</div>
       </div>
     </header>
@@ -160,7 +160,8 @@
       <aside class="toc" aria-label="Versions">
         <h4>Versions</h4>
         <ol>
-          <li><a href="#v0.5.0" class="on">0.5.0<small>20 November 2026</small></a></li>
+          <li><a href="#v0.6.0" class="on">0.6.0<small>20 November 2026</small></a></li>
+          <li><a href="#v0.5.0">0.5.0<small>20 November 2026</small></a></li>
           <li><a href="#v0.4.0">0.4.0<small>20 November 2026</small></a></li>
           <li><a href="#v0.3.0">0.3.0<small>20 November 2026</small></a></li>
           <li><a href="#v0.2.0">0.2.0<small>20 November 2026</small></a></li>
@@ -169,11 +170,58 @@
         </ol>
       </aside>
       <div>
+      <article class="release" id="v0.6.0">
+        <header>
+          <div class="meta">
+            <span class="ver">0.6.0</span>
+            <span class="latest">Latest</span>
+            <time datetime="2026-11-20">20 November 2026</time>
+            <a class="permalink" href="#v0.6.0" title="Link to 0.6.0" aria-label="Link to version 0.6.0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
+          </div>
+          <h2>Paste whole scripts into the Django shell</h2>
+          <p class="summary">No more IndentationError when you paste code into a Django or Python shell: a multi-line paste now runs as one block, exactly as written.</p>
+        </header>
+        <div class="hl">
+          <figure class="shot">
+            <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.6.0</span></div>
+            <picture>
+              <source srcset="0.6.0/paste-dark.png" media="(prefers-color-scheme: dark)" />
+              <img src="0.6.0/paste-light.png" alt="A Django shell where a pasted 14-line script ran as one block and printed its output" fetchpriority="high" />
+            </picture>
+          </figure>
+          <div class="hl-text">
+            <span class="tag">Fixed</span>
+            <h3>Pasted code runs as one block</h3>
+            <p>Python's console reads pasted code line by line, so a blank line inside a block ended it early and every line after it failed with <strong>unexpected indent</strong>. Now a multi-line paste in a Python or Django shell runs as one block: blank lines, indentation and quotes arrive exactly, and what it defines stays in the shell. One-line pastes work as before, and <strong>⌘⇧V</strong> still pastes line by line.</p>
+          </div>
+        </div>
+        <div class="hl compact">
+          <figure class="shot">
+            <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.6.0</span></div>
+            <picture>
+              <source srcset="0.6.0/paste-preview-dark.png" media="(prefers-color-scheme: dark)" />
+              <img src="0.6.0/paste-preview-light.png" alt="A dialog titled Run 14 pasted lines? showing the pasted code on a production cluster" loading="lazy" />
+            </picture>
+          </figure>
+          <div class="hl-text">
+            <span class="tag">New</span>
+            <h3>A preview before running on production</h3>
+            <p>On protected clusters, a multi-line paste shows you the code first and runs only when you click <strong>Run</strong>, so a stray clipboard can't run a script by accident.</p>
+          </div>
+        </div>
+        <div class="lists">
+          <div class="list">
+            <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg>Improvements</h4>
+            <ul><li>Code copied from inside a function is un-indented automatically.</li><li>Errors point at the line of your paste, as File &quot;&lt;pasted code&gt;&quot;, line 3.</li><li>Bash shells and the Mac terminal paste exactly as before.</li></ul>
+          </div>
+        </div>
+      </article>
+
       <article class="release" id="v0.5.0">
         <header>
           <div class="meta">
             <span class="ver">0.5.0</span>
-            <span class="latest">Latest</span>
+            
             <time datetime="2026-11-20">20 November 2026</time>
             <a class="permalink" href="#v0.5.0" title="Link to 0.5.0" aria-label="Link to version 0.5.0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
           </div>
@@ -185,7 +233,7 @@
             <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.5.0</span></div>
             <picture>
               <source srcset="0.5.0/yaml-dark.png" media="(prefers-color-scheme: dark)" />
-              <img src="0.5.0/yaml-light.png" alt="The YAML editor's review step for web-api, showing replicas changed from 3 to 4 and LOG_LEVEL from info to debug" fetchpriority="high" />
+              <img src="0.5.0/yaml-light.png" alt="The YAML editor's review step for web-api, showing replicas changed from 3 to 4 and LOG_LEVEL from info to debug" loading="lazy" />
             </picture>
           </figure>
           <div class="hl-text">
@@ -416,7 +464,7 @@
     <section class="cta">
       <h2>Try the latest version</h2>
       <p>Free for Macs with Apple silicon. Signed and notarized by Apple.</p>
-      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.5.0</a>
+      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.6.0</a>
     </section>
   </main>
 
