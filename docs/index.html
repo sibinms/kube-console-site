@@ -109,6 +109,8 @@
     .hero { padding: 76px 0 24px; text-align: center; }
     .pill { display: inline-flex; gap: 8px; align-items: center; font-size: 13.5px; color: var(--muted); border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 5px 13px; margin-bottom: 22px; }
     .pill b { color: var(--accent); font-weight: 600; }
+    a.pill { transition: border-color .15s, color .15s; }
+    a.pill:hover { text-decoration: none; border-color: var(--accent); color: var(--text); }
     h1 { font-size: clamp(40px, 6.4vw, 72px); line-height: 1.04; letter-spacing: -0.035em; margin: 0 auto 20px; max-width: 900px; }
     h1 .grad { background: linear-gradient(100deg, var(--accent), #8a5cff); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .lead { font-size: clamp(18px, 2.2vw, 21px); color: var(--muted); max-width: 720px; margin: 0 auto 30px; }
@@ -216,6 +218,7 @@
         <a href="#features">Features</a>
         <a href="#safety">Production safety</a>
         <a href="#faq">FAQ</a>
+        <a href="whats-new/">What's new</a>
         <a class="btn primary small" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download</a>
       </div>
     </div>
@@ -224,7 +227,7 @@
   <main id="top">
     <header class="hero">
       <div class="wrap">
-        <div class="pill"><b>New</b> · Mac app for Kubernetes</div>
+        <!-- whats-new:pill --><div class="pill"><b>New</b> · Mac app for Kubernetes</div><!-- /whats-new:pill -->
         <h1>Kubernetes, <span class="grad">without the kubectl.</span></h1>
         <p class="lead">Kube Console is a Mac app for everyday cluster work. Open a shell in an app, read its logs or check if it's healthy, with a click instead of a command. On GKE, EKS, AKS or any cluster in your kubeconfig.</p>
         <div class="ctas">
@@ -424,6 +427,7 @@
     <div class="wrap">
       <span>© 2026 Kube Console</span>
       <span class="sp"></span>
+      <a href="whats-new/">What's new</a>
       <a href="privacy.html">Privacy</a>
       <a href="#faq">FAQ</a>
       <a href="https://github.com/sibinms/kube-console-site">GitHub</a>
