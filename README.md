@@ -1,6 +1,6 @@
 # Kube Console website
 
-The public page for Kube Console, a Mac app for everyday Kubernetes work:
+The public page for Kube Console, a desktop app for Mac, Windows and Linux for everyday Kubernetes work:
 shells, logs and app health with buttons instead of kubectl, on GKE, EKS, AKS
 or any kubeconfig.
 
