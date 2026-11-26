@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>What's new in Kube Console · Release notes</title>
-  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.6.3, Edit JSON secrets in place." />
+  <meta name="description" content="What's new in Kube Console, the Mac app for Kubernetes: every release explained with screenshots. Latest: 0.6.4, Finds your cloud CLIs wherever your terminal does." />
   <link rel="canonical" href="https://sibinms.github.io/kube-console-site/whats-new/" />
   <meta name="theme-color" content="#3b6ff5" />
   <link rel="icon" type="image/png" href="../icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kube Console" />
-  <meta property="og:title" content="What's new in Kube Console 0.6.3" />
-  <meta property="og:description" content="Edit JSON secrets in place. Editing a secret now opens a large editor with the current value in it, so you change only what you need. JSON is checked as you type, and you can see exactly what changed before you save." />
+  <meta property="og:title" content="What's new in Kube Console 0.6.4" />
+  <meta property="og:description" content="Finds your cloud CLIs wherever your terminal does. If Kube Console said the Google Cloud, AWS or Azure CLI wasn't installed although it works in your terminal, it now finds it." />
   <meta property="og:url" content="https://sibinms.github.io/kube-console-site/whats-new/" />
-  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/whats-new/0.6.3/secret-json-light.png" />
+  <meta property="og:image" content="https://sibinms.github.io/kube-console-site/screenshots/og-poster.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- Built by scripts/whats-new.js in the app repository; edit release-notes/, not this file. -->
   <style>
@@ -151,7 +151,7 @@
       <div class="wrap">
         <div class="kicker">Release notes</div>
         <h1>What's new in <span class="grad">Kube Console</span></h1>
-        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.6.3">0.6.3</a>, out 24 November 2026.</p>
+        <p class="lead">Every release, explained with pictures. The latest is <a href="#v0.6.4">0.6.4</a>, out 26 November 2026.</p>
         <div class="auto"><b>Automatic</b> Kube Console updates itself, so new versions reach you without a download.</div>
       </div>
     </header>
@@ -160,7 +160,8 @@
       <aside class="toc" aria-label="Versions">
         <h4>Versions</h4>
         <ol>
-          <li><a href="#v0.6.3" class="on">0.6.3<small>24 November 2026</small></a></li>
+          <li><a href="#v0.6.4" class="on">0.6.4<small>26 November 2026</small></a></li>
+          <li><a href="#v0.6.3">0.6.3<small>24 November 2026</small></a></li>
           <li><a href="#v0.6.2">0.6.2<small>23 November 2026</small></a></li>
           <li><a href="#v0.6.1">0.6.1<small>23 November 2026</small></a></li>
           <li><a href="#v0.6.0">0.6.0<small>20 November 2026</small></a></li>
@@ -173,11 +174,30 @@
         </ol>
       </aside>
       <div>
+      <article class="release quiet" id="v0.6.4">
+        <header>
+          <div class="meta">
+            <span class="ver">0.6.4</span>
+            <span class="latest">Latest</span>
+            <time datetime="2026-11-26">26 November 2026</time>
+            <a class="permalink" href="#v0.6.4" title="Link to 0.6.4" aria-label="Link to version 0.6.4"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
+          </div>
+          <h2>Finds your cloud CLIs wherever your terminal does</h2>
+          <p class="summary">If Kube Console said the Google Cloud, AWS or Azure CLI wasn't installed although it works in your terminal, it now finds it.</p>
+        </header>
+        <div class="lists">
+          <div class="list">
+            <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>Fixes</h4>
+            <ul><li>Kube Console could say the Google Cloud CLI isn't installed when it is. Apps opened from Finder or the Dock don't get your terminal's PATH, so the app only looked in a few usual folders. It now asks your login shell for its PATH once when it starts, and finds gcloud, aws, az and kubectl wherever your terminal does.</li></ul>
+          </div>
+        </div>
+      </article>
+
       <article class="release" id="v0.6.3">
         <header>
           <div class="meta">
             <span class="ver">0.6.3</span>
-            <span class="latest">Latest</span>
+            
             <time datetime="2026-11-24">24 November 2026</time>
             <a class="permalink" href="#v0.6.3" title="Link to 0.6.3" aria-label="Link to version 0.6.3"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>
           </div>
@@ -189,7 +209,7 @@
             <div class="chrome"><i></i><i></i><i></i><span>Kube Console 0.6.3</span></div>
             <picture>
               <source srcset="0.6.3/secret-json-dark.png" media="(prefers-color-scheme: dark)" />
-              <img src="0.6.3/secret-json-light.png" alt="The secret editor with a JSON value and the changed lines highlighted below it" fetchpriority="high" />
+              <img src="0.6.3/secret-json-light.png" alt="The secret editor with a JSON value and the changed lines highlighted below it" loading="lazy" />
             </picture>
           </figure>
           <div class="hl-text">
@@ -598,7 +618,7 @@
     <section class="cta">
       <h2>Try the latest version</h2>
       <p>Free for Macs with Apple silicon. Signed and notarized by Apple.</p>
-      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.6.3</a>
+      <a class="btn primary" href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console 0.6.4</a>
     </section>
   </main>
 
