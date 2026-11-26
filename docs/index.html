@@ -29,7 +29,7 @@
     "@type": "SoftwareApplication",
     "name": "Kube Console",
     "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "macOS (Apple silicon)",
+    "operatingSystem": "macOS (Apple silicon), Linux (x86-64, preview)",
     "description": "A Mac desktop app for everyday Kubernetes work: open Bash, Django or database shells in pods, read logs, check app health and search cloud logs with buttons instead of kubectl. Works with Google Kubernetes Engine (GKE), Amazon EKS, Azure AKS and any cluster in a kubeconfig, with production protection built in.",
     "url": "https://sibinms.github.io/kube-console-site/",
     "screenshot": "https://sibinms.github.io/kube-console-site/screenshots/og-poster.png",
@@ -235,6 +235,7 @@
           <a class="btn ghost" href="#how">See how it works</a>
         </div>
         <p class="fine">For Macs with Apple silicon · Signed and notarized by Apple · Uses the logins you already have</p>
+        <p class="fine">On Linux? Try the preview: <a href="https://github.com/sibinms/kube-console-site/releases/download/linux-preview/Kube-Console-linux-x86_64.AppImage">AppImage</a> · <a href="https://github.com/sibinms/kube-console-site/releases/download/linux-preview/Kube-Console-linux-amd64.deb">.deb for Ubuntu and Debian</a> (x86-64)</p>
 
         <div class="shot">
           <div class="chrome"><i></i><i></i><i></i><span>Kube Console · staging-apps</span></div>
@@ -406,7 +407,7 @@
           <details><summary>Is it safe to use on production?</summary><p>Production clusters are marked with a red bar and label. By default they're Protected: you type the cluster's name before a shell opens. You can also set any cluster to Read-only, which turns shells off entirely. What you can do is still decided by your own access on the cluster.</p></details>
           <details><summary>Does it store my passwords or cloud credentials?</summary><p>No. It signs in through the official command-line tools you already use (gcloud, aws, az and kubectl) and never sees your password. It has no account, no server and sends no usage data.</p></details>
           <details><summary>How is it different from Lens or k9s?</summary><p>Lens and k9s are full cluster managers aimed at Kubernetes specialists. Kube Console focuses on the everyday jobs a whole team does, such as opening a shell in an app, reading its logs and checking whether it's healthy, with plain language and production guard rails.</p></details>
-          <details><summary>Does it run on Windows or Linux?</summary><p>Not yet. Kube Console currently runs on Macs with Apple silicon.</p></details>
+          <details><summary>Does it run on Windows or Linux?</summary><p>Linux: yes, as a preview for x86-64. Download the <a href="https://github.com/sibinms/kube-console-site/releases/download/linux-preview/Kube-Console-linux-x86_64.AppImage">AppImage</a> (make it executable with <code>chmod +x</code>, then open it) or the <a href="https://github.com/sibinms/kube-console-site/releases/download/linux-preview/Kube-Console-linux-amd64.deb">.deb</a> for Ubuntu and Debian (<code>sudo apt install ./Kube-Console-linux-amd64.deb</code>). It has had less testing than the Mac app, and it doesn't update itself: it tells you when a newer version is out. Windows support is being worked on.</p></details>
           <details><summary>How do I install it?</summary><p><a href="https://github.com/sibinms/kube-console-site/releases/latest/download/Kube-Console.dmg">Download Kube Console</a>, open the disk image and drag Kube Console to Applications. It's signed with a Developer ID and notarized by Apple, so it opens with a normal double-click.</p></details>
         </div>
       </div>
